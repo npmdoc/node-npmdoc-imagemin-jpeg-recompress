@@ -1,0 +1,226 @@
+<div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a
+
+        href="https://github.com/imagemin/imagemin-jpeg-recompress#readme"
+
+    >imagemin-jpeg-recompress (v5.1.0)</a>
+</h1>
+<h4>jpeg-recompress imagemin plugin</h4>
+<div class="apidocSectionDiv"><a
+    href="#apidoc.tableOfContents"
+    id="apidoc.tableOfContents"
+><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.imagemin-jpeg-recompress">module imagemin-jpeg-recompress</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.imagemin-jpeg-recompress.imagemin-jpeg-recompress">
+            function <span class="apidocSignatureSpan"></span>imagemin-jpeg-recompress
+            <span class="apidocSignatureSpan">({}, opts)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.imagemin-jpeg-recompress.toString">
+            function <span class="apidocSignatureSpan">imagemin-jpeg-recompress.</span>toString
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.imagemin-jpeg-recompress.toString">module imagemin-jpeg-recompress.toString</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.imagemin-jpeg-recompress.toString.toString">
+            function <span class="apidocSignatureSpan">imagemin-jpeg-recompress.</span>toString
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.imagemin-jpeg-recompress" id="apidoc.module.imagemin-jpeg-recompress">module imagemin-jpeg-recompress</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.imagemin-jpeg-recompress.imagemin-jpeg-recompress" id="apidoc.element.imagemin-jpeg-recompress.imagemin-jpeg-recompress">
+        function <span class="apidocSignatureSpan"></span>imagemin-jpeg-recompress
+        <span class="apidocSignatureSpan">({}, opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">opts =&#x3e; buf =&#x3e; {
+	opts = Object.assign({}, opts);
+
+	if (!Buffer.isBuffer(buf)) {
+		return Promise.reject(new TypeError(&#x27;Expected a buffer&#x27;));
+	}
+
+	if (!isJpg(buf)) {
+		return Promise.resolve(buf);
+	}
+
+	const args = [&#x27;--quiet&#x27;];
+
+	if (opts.accurate) {
+		args.push(&#x27;--accurate&#x27;);
+	}
+
+	if (opts.quality) {
+		args.push(&#x27;--quality&#x27;, opts.quality);
+	}
+
+	if (opts.method) {
+		args.push(&#x27;--method&#x27;, opts.method);
+	}
+
+	if (opts.target) {
+		args.push(&#x27;--target&#x27;, opts.target);
+	}
+
+	if (opts.min) {
+		args.push(&#x27;--min&#x27;, opts.min);
+	}
+
+	if (opts.max) {
+		args.push(&#x27;--max&#x27;, opts.max);
+	}
+
+	if (opts.loops) {
+		args.push(&#x27;--loops&#x27;, opts.loops);
+	}
+
+	if (opts.defish) {
+		args.push(&#x27;--defish&#x27;, opts.defish);
+	}
+
+	if (opts.zoom) {
+		args.push(&#x27;--zoom&#x27;, opts.zoom);
+	}
+
+	if (opts.progressive === false) {
+		args.push(&#x27;--no-progressive&#x27;);
+	}
+
+	if (opts.subsample) {
+		args.push(&#x27;--subsample&#x27;, opts.subsample);
+	}
+
+	if (opts.strip !== false) {
+		args.push(&#x27;--strip&#x27;);
+	}
+
+	args.push(execBuffer.input, execBuffer.output);
+
+	return execBuffer({
+		input: buf,
+		bin: jpegRecompress,
+		args
+	}).catch(err =&#x3e; {
+		err.message = err.stderr || err.message;
+		throw err;
+	});
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.imagemin-jpeg-recompress.toString" id="apidoc.element.imagemin-jpeg-recompress.toString">
+        function <span class="apidocSignatureSpan">imagemin-jpeg-recompress.</span>toString
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">toString = function () {
+    return text;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.imagemin-jpeg-recompress.toString" id="apidoc.module.imagemin-jpeg-recompress.toString">module imagemin-jpeg-recompress.toString</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.imagemin-jpeg-recompress.toString.toString" id="apidoc.element.imagemin-jpeg-recompress.toString.toString">
+        function <span class="apidocSignatureSpan">imagemin-jpeg-recompress.</span>toString
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function toString() { [native code] }</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
