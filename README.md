@@ -1,4 +1,7 @@
-# api documentation for  [imagemin-jpeg-recompress (v5.1.0)](https://github.com/imagemin/imagemin-jpeg-recompress#readme)  [![npm package](https://img.shields.io/npm/v/npmdoc-imagemin-jpeg-recompress.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-imagemin-jpeg-recompress) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-imagemin-jpeg-recompress.svg)](https://travis-ci.org/npmdoc/node-npmdoc-imagemin-jpeg-recompress)
+# npmdoc-imagemin-jpeg-recompress
+
+#### basic api documentation for  [imagemin-jpeg-recompress (v5.1.0)](https://github.com/imagemin/imagemin-jpeg-recompress#readme)  [![npm package](https://img.shields.io/npm/v/npmdoc-imagemin-jpeg-recompress.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-imagemin-jpeg-recompress) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-imagemin-jpeg-recompress.svg)](https://travis-ci.org/npmdoc/node-npmdoc-imagemin-jpeg-recompress)
+
 #### jpeg-recompress imagemin plugin
 
 [![NPM](https://nodei.co/npm/imagemin-jpeg-recompress.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/imagemin-jpeg-recompress)
@@ -86,7 +89,8 @@
     "version": "5.1.0",
     "xo": {
         "esnext": true
-    }
+    },
+    "bin": {}
 }
 ```
 
